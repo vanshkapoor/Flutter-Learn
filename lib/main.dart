@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 // import 'package:hello_world/drawer.dart';
 import 'package:hello_world/page/form.dart';
-
+import 'package:hello_world/page/login.dart';
 // import 'name_card.dart';
 
 void main(){
   // WidgetApp
   // MaterialApp
   // cupertinoApp
+  // runApp(MyApp());
   runApp(MyApp());
   }
 
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    home: HomePage(),
+    debugShowCheckedModeBanner: false,
+    home: LoginPage(),
     theme: ThemeData(
       // accentColor: Colors.black,
       primarySwatch: Colors.blueGrey,
