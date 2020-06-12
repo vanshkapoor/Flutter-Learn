@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hello_world/page/form.dart';
 
 class LoginPage extends StatefulWidget {
-
+  static const String routeName = "/login";
   // creating form  state
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -32,6 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: TextFormField(
+                      // validator: (s){},
                       controller: _usernameController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
@@ -44,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: TextFormField(
+                      // validator: (s){},
                       controller: _passwordController,
                       keyboardType: TextInputType.text,
                       obscureText: true,
@@ -57,8 +59,9 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 10,),
                   RaisedButton(
                     onPressed: (){
-                      Navigator.push(context,
-                       MaterialPageRoute(builder: (context) => HomePage()));
+                      // formKey.currentState.validate(),
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                      Navigator.pushNamed(context, HomePage.routeName)
                     },
                     child: Text("Sign In",
                     style: TextStyle(

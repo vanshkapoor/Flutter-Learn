@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 // import '../name_card.dart';
 
 class HomePage extends StatefulWidget {
+  static const String routeName = "/home";
   @override
   _HomePageState createState() => _HomePageState();
 }

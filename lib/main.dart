@@ -23,6 +23,10 @@ class MyApp extends StatelessWidget {
       // accentColor: Colors.black,
       primarySwatch: Colors.blueGrey,
     ),
+    routes: {
+      LoginPage.routeName:(context) => LoginPage(),
+      HomePage.routeName:(context) => HomePage(),
+    },
   );
   }
 }
