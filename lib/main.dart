@@ -3,22 +3,34 @@ import 'package:flutter/widgets.dart';
 // import 'package:hello_world/drawer.dart';
 import 'package:hello_world/page/form.dart';
 import 'package:hello_world/page/login.dart';
+// import 'package:hello_world/page/practice.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:hello_world/utils/constants.dart';
 // import 'name_card.dart';
 
-void main(){
-  // WidgetApp
-  // MaterialApp
-  // cupertinoApp
-  // runApp(MyApp());
+// void main(){
+//   // WidgetApp
+//   // MaterialApp
+//   // cupertinoApp
+//   // runApp(MyApp());
+//   runApp(MyApp());
+// }
+
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  Constants.prefs = await SharedPreferences.getInstance();
+  // SharedPreferences prefs = await SharedPreferences.getInstance();
   runApp(MyApp());
-  }
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: LoginPage(),
+    // home: Practice(),
+    // home:LoginPage(),
+    home: Constants.prefs.getBool("loggedIn")==true?HomePage():LoginPage(),
     theme: ThemeData(
       // accentColor: Colors.black,
       primarySwatch: Colors.blueGrey,

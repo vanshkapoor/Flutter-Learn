@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:hello_world/drawer.dart';
+import 'package:hello_world/page/login.dart';
+import 'package:hello_world/utils/constants.dart';
 // import 'package:hello_world/name_card.dart';
 import 'package:http/http.dart' as http;
 
@@ -64,8 +66,18 @@ class _HomePageState extends State<HomePage> {
         title: Text("Journal",
         style: TextStyle(
           color: Colors.white
+        ),        
         ),
-        )
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed:(){
+              Constants.prefs.setBool("loggedIn", false);
+              Navigator.pushReplacementNamed(context, LoginPage.routeName);
+              // Navigator.pop(context);
+            } 
+            )
+        ],
       )
     ,
     body: data != null?
